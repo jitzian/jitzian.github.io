@@ -1,0 +1,188 @@
+---
+interface Experience {
+    company: string;
+    client?: string;
+    role: string;
+    period: string;
+    technologies: string;
+    achievements: string[];
+    link?: string;
+}
+
+const experiences: Experience[] = [
+    {
+        company: 'Insight Global',
+        client: 'American Express',
+        role: 'Senior Android Developer / Tech Lead / Platform Engineer',
+        period: 'August 2024 - Present',
+        technologies: 'Jetpack Compose, Android SDK, MVVM, Dagger 2, Retrofit, GraphQL, Kotlin coroutines, Kotlin Flows, RX Java',
+        link: 'https://play.google.com/store/apps/details?id=com.kabbage.mobile&hl=en_US',
+        achievements: [
+            'Actively designing the strategy to migrate the legacy UI framework (Airbnb Epoxy\'s framework) to jetpack compose',
+            'Revamping the "pay your card" user experience based on customer\'s feedback in order to smooth the process of executing card payments',
+            'Creation of Design System (AmxDS) that homologizes the creation of UI across the different teams within AMEX Blue using Kotlin and Jetpack Compose',
+            'Revamping of Business Checking Account feature to provide more flexibility while searching transactions related to personal accounts',
+            'Optimization of performance by refactoring and merging API calls in order to enhance customer experience'
+        ]
+    },
+    {
+        company: 'Ibotta',
+        role: 'Senior Android Developer / Tech Lead / Platform Engineer',
+        period: 'May 2023 - August 2024',
+        technologies: 'Jetpack Compose, Android SDK, MVVM/MVI/MVP, Dagger 2, Retrofit, GraphQL, Kotlin coroutines, Kotlin Flows, Arrow, Spring Boot, JPA',
+        link: 'https://play.google.com/store/apps/details?id=com.ibotta.android&pcampaignid=web_share',
+        achievements: [
+            'Participated in the development of features to increase the flexibility for customer to redeem offers and maximize cash back during any purchase',
+            'Development of Digital Parking Lot (DPL) feature which consist on identifying products after savers purchases that qualify for cash back rewards',
+            'Development of feature to prevent multiple redemptions (anti-stacking) and frauds which helped to cut losses and boost earnings in ~25% on D2C channel',
+            'Rewriting search feature and optimization of barcode scanning process based on customers feedback',
+            'Led the development of earnings details simplification project which allows savers to get a more concise UI related to their transactions',
+            'Development of new REST API\'s to retrieve data related to recent purchases and transactions using SpringBoot and JPA',
+            'Worked on breaking time costly APIs into a new subset of lighter API suite that improved responsiveness for Web and Mobile'
+        ]
+    },
+    {
+        company: 'Photon Infotech Inc.',
+        client: 'Citi',
+        role: 'Tech Lead / Senior Android Developer',
+        period: 'January 2021 - May 2023',
+        technologies: 'Android Jetpack, Android SDK, Navigation-Graph, LiveData, MVVM/MVI, Dagger 2, Retrofit, Volley, Kotlin coroutines, Kotlin Flows, SpringBoot',
+        link: 'https://play.google.com/store/apps/details?id=com.citi.citimobile&pcampaignid=web_share',
+        achievements: [
+            'Development of feature for showing material to Citi\'s customers based on their custom preferences (News and Insights)',
+            'Development of REST API\'s for the retrieval of securities, ETF\'s and Mutual Funds consumed by FrontEnd layer using Spring Boot and JPA',
+            'Development of feature for making users to evaluate themselves based on the material consumed on News and Insights',
+            'Close collaboration with frontEnd (AngularJS) and backEnd (Spring) teams for the creation of the data models',
+            'Development of Make a Trade module for allowing users to perform brokerage operations (buy and sell Stocks, ETF, Mutual Funds)',
+            'Coaching and training of new joiners and helping on understanding of the code base'
+        ]
+    },
+    {
+        company: 'Photon Infotech Inc.',
+        client: 'JP Morgan Chase',
+        role: 'Android Developer / Software Engineer',
+        period: 'May 2019 - December 2020',
+        technologies: 'Java, Kotlin, Android SDK',
+        link: 'https://play.google.com/store/apps/details?id=com.chase.sig.android&pcampaignid=web_share',
+        achievements: [
+            'Creation of MDS (Manhattan Design System) framework for the development of Chase\'s Mobile features using native Android',
+            'MDS provides a library of pre-built and pre-coded UI components ensuring consistent user experience across all Chase mobile features',
+            'Defined design patterns and guidelines promoting clean and intuitive user interface',
+            'Developed reusable code snippets for common functionalities, significantly reducing development time',
+            'Implementation ensures consistency, efficiency, quality, and reduced costs across Chase\'s mobile development'
+        ]
+    },
+    {
+        company: 'Atos Syntel',
+        client: 'Kroger Technologies',
+        role: 'Android Developer',
+        period: 'March 2019 - May 2019',
+        technologies: 'Android Jetpack, Android SDK, MVVM/MVI, Dagger, Kotlin coroutines',
+        achievements: [
+            'Development of Product Locator App for associates in warehouses of Kroger',
+            'Improvement of Continuous Integration processes while releasing new versions of the app',
+            'Definition of release/branching strategy in order to reduce regressions during the release process',
+            'Implementation of high-quality code mechanisms and techniques such as TDD',
+            'Refactoring of the actual codebase to make more re-usable components and reduce performance issues',
+            'Coaching of new hires to ramp them up into the project'
+        ]
+    },
+    {
+        company: 'Photon Infotech Inc.',
+        client: 'Alliance Data Card Services',
+        role: 'Tech Lead / Android Developer',
+        period: 'February 2017 - February 2019',
+        technologies: 'Android Jetpack, Android SDK, MVVM/MVI, Dagger, Room DB, Kotlin coroutines',
+        achievements: [
+            'Design and implementation of Payments features',
+            'Implementation of Code coverage and Test Coverage on Pull Request builds using Jacoco and Slather on Jenkins',
+            'Architectural design of new features in order to fulfill the requirements',
+            'Implementation of Cobranded Credit Card (VISA and MasterCard) for 15+ Clients (Victoria Secret, Ann Taylor, Loft, Express, etc.)',
+            'Integration of OAuth API\'s into Native Account Center Library (NAC)',
+            'Leading of 3 Android and 3 iOS developers',
+            'Integration of automation suites into a Continuous Integration (CI) process for both platforms'
+        ]
+    }
+];
+
+const education = {
+    degree: 'Computer Systems Engineer',
+    institution: 'National Polytechnic Institute',
+    period: '2002 - 2007',
+    link: 'https://www.escom.ipn.mx/'
+};
+---
+
+<div class="prose prose-invert max-w-none">
+    <h2 class="text-2xl font-bold mb-6 text-primary">Work Experience</h2>
+    
+    <div class="space-y-8">
+        {experiences.map((exp, index) => (
+            <div class="border-l-2 border-primary pl-4 pb-6">
+                <div class="mb-2">
+                    <h3 class="text-xl font-bold text-gray-100">{exp.role}</h3>
+                    <p class="text-lg text-primary">
+                        {exp.company}
+                        {exp.client && <span class="text-gray-400"> • Client: {exp.client}</span>}
+                    </p>
+                    <p class="text-sm text-gray-400">{exp.period}</p>
+                    {exp.link && (
+                        <a 
+                            href={exp.link} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            class="text-xs text-blue-400 hover:underline"
+                        >
+                            View App →
+                        </a>
+                    )}
+                </div>
+                
+                <p class="text-sm text-gray-500 mb-3">
+                    <strong>Technologies:</strong> {exp.technologies}
+                </p>
+                
+                <ul class="space-y-2 text-sm text-gray-300">
+                    {exp.achievements.map(achievement => (
+                        <li class="flex items-start">
+                            <span class="text-primary mr-2">▹</span>
+                            <span>{achievement}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        ))}
+    </div>
+
+    <div class="mt-12 pt-8 border-t border-gray-600">
+        <h2 class="text-2xl font-bold mb-6 text-primary">Education</h2>
+        <div class="border-l-2 border-primary pl-4">
+            <h3 class="text-xl font-bold text-gray-100">{education.degree}</h3>
+            <p class="text-lg text-gray-300">{education.institution}</p>
+            <p class="text-sm text-gray-400">{education.period}</p>
+            <a 
+                href={education.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-xs text-blue-400 hover:underline"
+            >
+                Visit Institution →
+            </a>
+        </div>
+    </div>
+</div>
+
+<style>
+    .prose {
+        color: #e5e7eb;
+    }
+    
+    .prose h2 {
+        margin-top: 0;
+    }
+    
+    .prose ul {
+        list-style: none;
+        padding-left: 0;
+    }
+</style>

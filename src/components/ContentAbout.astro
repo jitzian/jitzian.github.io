@@ -4,83 +4,106 @@ import { Code } from 'astro:components';
 const code = `interface Developer {
     name: string;
     skills: string[];
-    interests: string[];
+    languages: string[];
 };
 
 interface TechStack {
-    devOps: string[];
+    android: string[];
     backend: string[];
-   frontend: string[];
+    databases: string[];
+    tools: string[];
+    sourceControl: string[];
+    agenticAI: string[];
 };
 
-type ContactType = 'github' | 'twitter' | 'linkedIn' | 'xing' | 'email';
+type ContactType = 'linkedIn' | 'twitter' | 'instagram' | 'email';
 
 const techStack: TechStack = {
-    devOps: [
-        'GitLab',
-        'GitHub',
-        'Cloudflare',
-        'Docker'
-    ],
-    frontend: [
-        'Angular',
-        'JavaScript',
-        'TypeScript',
-        'TailwindCSS',
-        'PrimeNG',
-        'Astro',
-        'Ionic',
-        'Stencil',
-        'Capacitor',
-        'SCSS',
-        'Markdown',
-        'WordPress'
+    android: [
+        'Android Jetpack',
+        'Android SDK',
+        'Jetpack Compose',
+        'Kotlin Multiplatform',
+        'Dagger 2 / Dagger Hilt',
+        'Room Database',
+        'Retrofit / Volley / GraphQL',
+        'MVVM / MVI / MVP',
+        'Kotlin Coroutines',
+        'Kotlin Flows',
+        'RxJava',
+        'JUnit / Mockito / Robolectric'
     ],
     backend: [
-        'Supabase',
+        'SpringBoot / JPA',
         'Node.js',
-        'Bun',
-        'Deno',
+        'Kotlin',
+        'Java',
+        'Python',
+        'C#'
+    ],
+    databases: [
+        'SQL',
         'PostgreSQL',
+        'Oracle',
         'MySQL',
-        'S3 Storage',
-        'Resend'
+        'SQLite'
+    ],
+    tools: [
+        'Jenkins',
+        'LaunchDarkly',
+        'Bitrise',
+        'Datadog',
+        'Jira',
+        'Confluence',
+        'Figma',
+        'Miro'
+    ],
+    sourceControl: [
+        'GitHub',
+        'GitLab',
+        'Bitbucket'
+    ],
+    agenticAI: [
+        'Ollama 3',
+        'LangChain4j',
+        'Google ADK',
+        'Claude',
+        'GitHub Copilot',
+        'Cursor',
+        'Windsurf'
     ]
 };
 
 // Developer profile
 const me: Developer = {
-    name: 'Dejan Vi.',
+    name: 'Jonathan Sandoval Cruz',
     skills: [
-        ...techStack.devOps,
+        ...techStack.android,
         ...techStack.backend,
-        ...techStack.frontend
+        ...techStack.databases,
+        ...techStack.tools,
+        ...techStack.sourceControl,
+        ...techStack.agenticAI
     ],
-    interests: [
-        'Open Source',
-        'Security',
-        'Privacy',
-        'Performance',
-        'Self-Hosting',
-        'Networking'
+    languages: [
+        'Spanish (Native)',
+        'English (Full Professional)'
     ]
 };
 
 // Contact function
 const contact = (type: ContactType): string => {
     switch (type) {
-        case 'github':
-            return 'https://github.com/devidevio';
-        case 'twitter':
-            return 'https://x.com/devidev_io';
         case 'linkedIn':
-            return 'https://www.linkedin.com/in/dejan-vi';
-        case 'xing':
-            return 'https://www.xing.com/profile/Dejan_Vintonjiv';
+            return 'https://www.linkedin.com/in/jonathansandoval-cruz';
+        case 'twitter':
+            return 'https://x.com/jitzian';
+        case 'instagram':
+            return 'https://instagram.com/jitzian';
         case 'email':
-            return 'hi@devidev.io';
+            return 'jonathan.sandoval@live.com';
         default:
-            return 'Send fax.';
+            return 'Get in touch!';
     }
 };
 
