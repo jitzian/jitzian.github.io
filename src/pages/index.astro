@@ -8,6 +8,7 @@ import ContentLink from '../components/ContentLink.astro';
 import ContentCode from '../components/ContentAbout.astro';
 import ContentProjects from '../components/ContentProjects.astro';
 import ContentExperience from '../components/ContentExperience.astro';
+import ContentReferences from '../components/ContentReferences.astro';
 ---
 
 <Layout>
@@ -60,6 +61,13 @@ import ContentExperience from '../components/ContentExperience.astro';
                         class="tab-radio"
                     />
 
+                    <input
+                        type="radio"
+                        id="tab3"
+                        name="tabs"
+                        class="tab-radio"
+                    />
+
                     <!-- Start: Tab bar -->
                     <div class="flex bg-black border-b border-gray-600 sticky top-0 z-10">
 
@@ -68,18 +76,14 @@ import ContentExperience from '../components/ContentExperience.astro';
                             contentName="about.ts"
                         />
 
-                        <!-- PROJECTS TAB LINK: Commented out for future use -->
-                        <!-- Uncomment when projects are ready -->
-                        <!--
-                        <ContentLink
-                            contentId="tab2"
-                            contentName="projects.md"
-                        />
-                        -->
-
                         <ContentLink
                             contentId="tab2"
                             contentName="experience.json"
+                        />
+
+                        <ContentLink
+                            contentId="tab3"
+                            contentName="references.json"
                         />
 
                     </div>
@@ -94,19 +98,17 @@ import ContentExperience from '../components/ContentExperience.astro';
                         </div>
                         <!-- End: About content -->
 
-                        <!-- PROJECTS CONTENT: Commented out for future use -->
-                        <!-- Uncomment when projects are ready to be displayed -->
-                        <!--
-                        <div id="content2" class="tab-content">
-                            <ContentProjects />
-                        </div>
-                        -->
-
                         <!-- Start: Experience content -->
                         <div id="content2" class="tab-content">
                             <ContentExperience />
                         </div>
                         <!-- End: Experience content -->
+
+                        <!-- Start: References content -->
+                        <div id="content3" class="tab-content">
+                            <ContentReferences />
+                        </div>
+                        <!-- End: References content -->
 
                     </div>
                     <!-- End: Tab content -->
@@ -166,17 +168,7 @@ import ContentExperience from '../components/ContentExperience.astro';
         @apply border-b-2 border-b-primary;
     }
 
-    /* PROJECTS TAB STYLES: Commented out for future use */
-    /* Uncomment these styles when projects tab is re-enabled */
-    /*
-    #tab2:checked ~ * #content2 {
-        @apply block opacity-100;
-    }
-
-    #tab2:checked ~ .flex .tab-link:nth-child(2) {
-        @apply border-b-2 border-b-primary;
-    }
-
+    /* When tab3 is checked, show content3 (References) and highlight its tab */
     #tab3:checked ~ * #content3 {
         @apply block opacity-100;
     }
@@ -184,6 +176,5 @@ import ContentExperience from '../components/ContentExperience.astro';
     #tab3:checked ~ .flex .tab-link:nth-child(3) {
         @apply border-b-2 border-b-primary;
     }
-    */
 
 </style>
