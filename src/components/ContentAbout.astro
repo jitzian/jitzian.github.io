@@ -9,38 +9,57 @@ const code = `interface Developer {
 
 interface TechStack {
     android: string[];
-    backend: string[];
-    databases: string[];
-    tools: string[];
     sourceControl: string[];
     agenticAI: string[];
+    databases: string[];
+    tools: string[];
+    programmingLanguages: string[];
+    automation: string[];
 };
 
-type ContactType = 'linkedIn' | 'twitter' | 'instagram' | 'email';
+type ContactType = 'linkedIn' | 'instagram' | 'email';
 
 const techStack: TechStack = {
     android: [
+        'Modern Android Development',
+        'MAD Skills',
         'Android Jetpack',
         'Android SDK',
-        'Jetpack Compose',
-        'Kotlin Multiplatform',
+        'Android Jetpack Compose',
         'Dagger 2 / Dagger Hilt',
+        'Kotlin Multiplatform',
+        'Kotlin Multiplatform Compose',
+        'Coil / Glide / Picasso',
         'Room Database',
-        'Retrofit / Volley / GraphQL',
-        'MVVM / MVI / MVP',
-        'Kotlin Coroutines',
+        'REST Retrofit/Volley/GraphQL',
+        'MVVM',
+        'MVI',
+        'MVP',
+        'Kotlin coroutines',
         'Kotlin Flows',
         'RxJava',
-        'JUnit / Mockito / Robolectric'
+        'Jenkins',
+        'Unity',
+        'SpringBoot/JPA',
+        'NodeJS'
     ],
-    backend: [
-        'SpringBoot / JPA',
-        'Node.js',
-        'Kotlin',
-        'Java',
-        'Python',
-        'C#'
+    
+    sourceControl: [
+        'GitHub',
+        'GitLab',
+        'Bitbucket'
     ],
+    
+    agenticAI: [
+        'Ollama 3',
+        'LangChain4j',
+        'Google ADK',
+        'Claude',
+        'GitHub Copilot',
+        'Cursor',
+        'Windsurf'
+    ],
+    
     databases: [
         'SQL',
         'PostgreSQL',
@@ -48,6 +67,7 @@ const techStack: TechStack = {
         'MySQL',
         'SQLite'
     ],
+    
     tools: [
         'Jenkins',
         'LaunchDarkly',
@@ -58,19 +78,17 @@ const techStack: TechStack = {
         'Figma',
         'Miro'
     ],
-    sourceControl: [
-        'GitHub',
-        'GitLab',
-        'Bitbucket'
+    
+    programmingLanguages: [
+        'kotlin',
+        'java',
+        'python',
+        'C#',
+        'bash'
     ],
-    agenticAI: [
-        'Ollama 3',
-        'LangChain4j',
-        'Google ADK',
-        'Claude',
-        'GitHub Copilot',
-        'Cursor',
-        'Windsurf'
+
+    automation: [
+        'n8n'
     ]
 };
 
@@ -96,8 +114,6 @@ const contact = (type: ContactType): string => {
     switch (type) {
         case 'linkedIn':
             return 'https://www.linkedin.com/in/jonathansandoval-cruz';
-        case 'twitter':
-            return 'https://x.com/jitzian';
         case 'instagram':
             return 'https://instagram.com/jitzian';
         case 'email':
