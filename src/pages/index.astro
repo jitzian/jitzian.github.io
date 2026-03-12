@@ -8,7 +8,6 @@ import ContentLink from '../components/ContentLink.astro';
 import ContentCode from '../components/ContentAbout.astro';
 import ContentProjects from '../components/ContentProjects.astro';
 import ContentExperience from '../components/ContentExperience.astro';
-import ContentReferences from '../components/ContentReferences.astro';
 ---
 
 <Layout>
@@ -61,13 +60,6 @@ import ContentReferences from '../components/ContentReferences.astro';
                         class="tab-radio"
                     />
 
-                    <input
-                        type="radio"
-                        id="tab3"
-                        name="tabs"
-                        class="tab-radio"
-                    />
-
                     <!-- Start: Tab bar -->
                     <div class="flex bg-black border-b border-gray-600 sticky top-0 z-10">
 
@@ -79,11 +71,6 @@ import ContentReferences from '../components/ContentReferences.astro';
                         <ContentLink
                             contentId="tab2"
                             contentName="experience.json"
-                        />
-
-                        <ContentLink
-                            contentId="tab3"
-                            contentName="references.json"
                         />
 
                     </div>
@@ -103,12 +90,6 @@ import ContentReferences from '../components/ContentReferences.astro';
                             <ContentExperience />
                         </div>
                         <!-- End: Experience content -->
-
-                        <!-- Start: References content -->
-                        <div id="content3" class="tab-content">
-                            <ContentReferences />
-                        </div>
-                        <!-- End: References content -->
 
                     </div>
                     <!-- End: Tab content -->
@@ -132,6 +113,7 @@ import ContentReferences from '../components/ContentReferences.astro';
 </Layout>
 
 <style is:global>
+    @reference "../styles/global.css";
 
     /* Hide the radio buttons */
     .tab-radio {
@@ -168,13 +150,5 @@ import ContentReferences from '../components/ContentReferences.astro';
         @apply border-b-2 border-b-primary;
     }
 
-    /* When tab3 is checked, show content3 (References) and highlight its tab */
-    #tab3:checked ~ * #content3 {
-        @apply block opacity-100;
-    }
-
-    #tab3:checked ~ .flex .tab-link:nth-child(3) {
-        @apply border-b-2 border-b-primary;
-    }
 
 </style>

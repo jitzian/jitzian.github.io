@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
+import tailwindcss from '@tailwindcss/vite';
 
-import tailwind from '@astrojs/tailwind';
-import compress from 'astro-compress';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
@@ -9,36 +8,28 @@ export default defineConfig({
     trailingSlash: 'always',
     site: 'https://jitzian.github.io',
 
+    // HTML compression is enabled by default in Astro v6 (compressHTML: true)
+    // CSS is minified by Vite via Lightning CSS
+    // JS is minified by Vite via esbuild
+
     // Single page, no prefetch needed
     prefetch: false,
 
-    integrations: [
-        tailwind(),
-        sitemap(),
-        compress({
-            CSS: true,
-            SVG: false,
-            Image: false,
-            HTML: {
-                "html-minifier-terser": {
-                    collapseWhitespace: true,
-                    // collapseInlineTagWhitespace: true, // It breaks display-inline / flex-inline text
-                    minifyCSS: true,
-                    minifyJS: true,
-                    removeComments: true,
-                    removeEmptyAttributes: true,
-                    // removeEmptyElements: true, // It removes sometimes SVGs
-                    removeRedundantAttributes: true
-                },
-            },
-            JavaScript: {
-                'terser': {
-                    compress: {
-                        drop_console: true,
-                        drop_debugger: true,
-                    }
+    vite: {
+        plugins: [tailwindcss()],
+        build: {
+            // Use terser for JS minification so we can drop console/debugger statements
+            minify: 'terser',
+            terserOptions: {
+                compress: {
+                    drop_console: true,
+                    drop_debugger: true,
                 }
             }
-        })
+        }
+    },
+
+    integrations: [
+        sitemap(),
     ]
 });
